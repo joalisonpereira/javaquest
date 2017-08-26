@@ -5,7 +5,7 @@ Jogo de perguntas
 Requerimentos
 -------------
 
-Servidor web,banco de dados e php.
+Servidor web,banco de dados e PHP.
 
 Informações 
 -----------
