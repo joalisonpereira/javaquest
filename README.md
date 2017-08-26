@@ -5,8 +5,8 @@ Jogo de perguntas
 Requerimentos
 -------------
 
-Programa feito para windows,podendo rodar em sistemas linux com possíveis bugs.
+Servidor web,banco de dados e php.
 
 Informações 
 -----------
-Persistência de dados é feita com arquivos serializados.
+
