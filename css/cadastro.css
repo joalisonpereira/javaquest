@@ -1,0 +1,14 @@
+header .btn-voltar{
+	position:absolute;
+	right:10px;
+	top:23px;
+}
+section .loginArea i{
+	border-left: solid 1px #c1c1c1 !important;
+}
+section .loginArea legend{
+	border:none;
+}
+.btn,section .input-lg{
+	border-radius:0 !important;
+}

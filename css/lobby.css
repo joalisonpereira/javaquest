@@ -1,0 +1,46 @@
+header .menu{
+	position:absolute;
+	right:10px;
+	top:23px;
+}
+@media(max-width:600px){
+	.ranking{
+		margin-top:50px;
+	}
+	h2{
+		text-align: center;
+	}
+	.menu{
+		margin-bottom:40px;
+	}
+	header h1{
+		text-align: center;
+	}
+	header .menu{
+		position:relative;
+		text-align: center;
+	}
+}
+section h2{
+	margin-top:80px;
+}
+section .loginArea i{
+	border-left: solid 1px #c1c1c1 !important;
+}
+section .loginArea legend{
+	border:none;
+}
+section .input-lg,.btn{
+	border-radius:0 !important;
+}
+.modal-dialog,.modal-content,.modal{
+	border-radius:0 !important;
+}
+.modal-header{
+	background-color:#E03D3D !important;
+	color:white !important;
+}
+figure img{
+	transition:all 0.5s;
+	transform:translateY(-20px);
+}

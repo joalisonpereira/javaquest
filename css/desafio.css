@@ -1,0 +1,33 @@
+.quizBox{
+	margin-top:140px;
+}
+.quizBox table{
+	margin-top:80px;
+}
+.vidas:hover{
+	transform:scale(1.2);
+	transition:all 0.4s;
+}
+.vidas{
+	transition:all 0.4s;
+	position:relative;
+	top:-5px;
+}
+.vidas p{
+	color:white !important;
+	font-weight: bold;
+	display:inline;
+	position:relative;
+	left:28px;
+	top:1px;
+}
+.iconDificuldade img{
+	position:relative;
+	top:-5px;
+	left:5px;
+}
+.iconDificuldade p{
+	font-size:110%;
+	font-variant: italic;
+	display:inline;
+}
