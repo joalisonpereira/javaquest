@@ -42,7 +42,7 @@
 								<br>
 								<br>
 								<div class="col-md-8 col-md-offset-2">
-									<img src="img/cat<?php echo rand(0,3); ?>.jpg" alt="" class="img-responsive center-block">
+									<img src="img/cat<?php echo rand(0,4); ?>.jpg" alt="" class="img-responsive center-block">
 								</div>
 							</div>
 						</figure>
