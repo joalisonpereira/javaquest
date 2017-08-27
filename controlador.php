@@ -10,6 +10,8 @@ if(!isset($_POST['nivel']) ||  !isset($_POST['resposta']) || !is_numeric($_POST[
 
 	$nivel+=1;
 
+	$_SESSION['pontos']+=1; //AUMENTA PONTOS
+
 	$_SESSION['nivelConquistado']=$nivel; // PASSOU DE NIVEL
 
 	$_SESSION['perguntadas'][]=$_POST['pergunta_id']; // ADICIONA ID DA PERGUNTA NO ARRAY

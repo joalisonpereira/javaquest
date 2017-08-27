@@ -22,6 +22,7 @@ header .menu{
 	}
 }
 section h2{
+	visibility: hidden;
 	margin-top:80px;
 }
 section .loginArea i{

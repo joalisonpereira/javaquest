@@ -1,6 +1,6 @@
 # Java Quest
 
-Jogo de perguntas
+Jogo de perguntas sobre a linguagem java.
 
 Requerimentos
 -------------

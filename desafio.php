@@ -4,6 +4,9 @@
 	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || $_SESSION['nivelConquistado']!=$_GET['nivel'] || !isset($_SESSION['vidas'])){
 		header('Location:lobby.php');
 	}
+	if($_GET['nivel']==1){
+		$_SESSION['pontos']=1;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +40,7 @@
 										echo "Dificuldade: ".$perguntaSelecionada->dificuldade;
 									?>
 								</p>
-								<img src="http://static1.squarespace.com/static/552eb0dce4b0c7c4ab71e064/55439a76e4b01be424066d96/55439a81e4b01be424067122/1431485601693/?format=1000w" alt="" style="width:40px; height:40px;">
+								<img src="img/ninja.png" alt="" style="width:40px; height:40px;">
 							</div>
 							<form action="controlador.php" method="post">
 								<h2>
@@ -81,12 +84,11 @@
 		<footer>
 			
 		</footer>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
 <?php 
 function selecionaPergunta(){
-	if($_GET['nivel']<=4){
+	if($_GET['nivel']<=5){
 		$listaPerguntas=DesafioDAO::getPerguntas('Fácil');
 		$idPerguntadas=$_SESSION['perguntadas'] ?? array();
 		foreach ($listaPerguntas as $key => &$row) {
@@ -97,7 +99,7 @@ function selecionaPergunta(){
 			}
 		}
 	}
-	if($_GET['nivel']>4 && $_GET['nivel']<=7){
+	if($_GET['nivel']>5 && $_GET['nivel']<=7){
 		$listaPerguntas=DesafioDAO::getPerguntas('Normal');
 		$idPerguntadas=$_SESSION['perguntadas'] ?? array();
 		foreach ($listaPerguntas as $key => &$row) {

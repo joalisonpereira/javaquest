@@ -52,13 +52,13 @@
 			<br>
 			<div class="text-center">
 				<p>
-			<?php 
-				if(isset($_SESSION['msgLogin'])){
-					echo $_SESSION['msgLogin'];
-					unset($_SESSION['msgLogin']);
-				}
-			?>
-		</p>
+					<?php 
+						if(isset($_SESSION['msgLogin'])){
+							echo $_SESSION['msgLogin'];
+							unset($_SESSION['msgLogin']);
+						}
+					?>
+				</p>
 			</div>
 		</section>
 		<footer>
