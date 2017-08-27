@@ -46,5 +46,23 @@ class UsuarioDAO extends DATABASE{
 
 		return $lista;
 	}
+	public static function getRecorde($usuario_id){
+		$sql="SELECT login,recorde FROM usuarios WHERE id=?";
+		$stmt=DATABASE::prepare($sql);
+		$stmt->bindValue(1,$usuario_id);
+		$stmt->execute();
+
+		$row = $stmt->fetch(PDO::FETCH_OBJ);
+
+		return $row;
+	}
+	public static function atualizaRecorde($usuario_id,$recorde){
+		$sql="UPDATE usuarios SET recorde=? WHERE id=?";
+		$stmt=DATABASE::prepare($sql);
+		$stmt->bindValue(1,$recorde);
+		$stmt->bindValue(2,$usuario_id);
+
+		return $stmt->execute();
+	}
 }
 ?>

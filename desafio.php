@@ -5,7 +5,7 @@
 		header('Location:lobby.php');
 	}
 	if($_GET['nivel']==1){
-		$_SESSION['pontos']=1;
+		$_SESSION['pontos']=0;
 	}
 ?>
 <!DOCTYPE html>
@@ -35,13 +35,14 @@
 						<div class="quizBox">
 							<div class="iconDificuldade text-right">
 								<p>
-									<?php 
-										$perguntaSelecionada=selecionaPergunta();
-										echo "Dificuldade: ".$perguntaSelecionada->dificuldade;
-									?>
+									<strong>
+										<?php 
+											$perguntaSelecionada=selecionaPergunta();
+											echo "Dificuldade: ".$perguntaSelecionada->dificuldade;
+										?>
+									</strong>
 								</p>
-								<img src="img/ninja.png" alt="" style="width:40px; height:40px;">
-							</div>
+							</div>	
 							<form action="controlador.php" method="post">
 								<h2>
 									<?php 
@@ -51,14 +52,14 @@
 								<table class="table">
 									<tbody>
 										<?php
-											$alternativa=array("[A]","[B]","[C]","[D]"); 
+											$alternativa=array("A","B","C","D"); 
 											$array=selecionaRespostas($perguntaSelecionada->id);
 											foreach ($array as $key => $row): ?>
 											
 											<tr>
 												<td><strong><?= $alternativa[$key]; ?></strong></td>
-												<td><label for="resposta"><?php echo $row->resposta; ?></label></td>
-												<td><input type="radio" name="resposta" class="pull-right" value="<?= $row->correta; ?>"></td>
+												<td class="pull-left"><label for="resposta"><?php echo $row->resposta; ?></label></td>
+												<td><input type="radio" name="resposta" class="pull-right" value="<?= $row->correta; ?>" required></td>
 											</tr>
 											
 										<?php endforeach ?>
@@ -86,6 +87,17 @@
 		</footer>
 	</body>
 </html>
+<style>
+	.table strong{
+		border-radius:10px;
+		background: #E03D3D ;
+		padding:8px 12px;
+		color:white;
+	}
+	.table td{
+		padding:15px 0 !important;
+	}
+</style>
 <?php 
 function selecionaPergunta(){
 	if($_GET['nivel']<=5){

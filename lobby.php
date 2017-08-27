@@ -21,7 +21,7 @@
 	<body>
 		<header>
 			<div class="container-fluid">
-				<h1>Java Quest</h1>
+				<h1><img src="img/java-logo.jpeg" alt="Java logo">Quest</h1>
 				<nav>
 					<div class="menu">
 						<a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNovaPergunta"><span class="glyphicon glyphicon-plus"></span> Perguntas</a>

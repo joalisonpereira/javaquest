@@ -1,7 +1,7 @@
 header .menu{
 	position:absolute;
 	right:10px;
-	top:23px;
+	top:33px;
 }
 @media(max-width:600px){
 	.ranking{
@@ -16,10 +16,17 @@ header .menu{
 	header h1{
 		text-align: center;
 	}
+	header hr{
+		margin-top:55px;
+	}
 	header .menu{
 		position:relative;
 		text-align: center;
+		margin-left:20px;
 	}
+}
+section hr{
+	visibility: hidden;
 }
 section h2{
 	visibility: hidden;

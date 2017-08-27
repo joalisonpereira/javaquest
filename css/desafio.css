@@ -21,13 +21,3 @@
 	left:28px;
 	top:1px;
 }
-.iconDificuldade img{
-	position:relative;
-	top:-5px;
-	left:5px;
-}
-.iconDificuldade p{
-	font-size:110%;
-	font-variant: italic;
-	display:inline;
-}
