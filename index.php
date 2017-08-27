@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<div class="container-fluid">
-				<h1>Java Quest</h1>
+				<h1><img src="img/java-logo.jpeg" alt="Java logo"></h1>
 				<nav>
 					<a href="cadastro.php" class="btn btn-danger btn-cadastro">Cadastrar</a>
 				</nav>

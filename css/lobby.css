@@ -25,11 +25,7 @@ header .menu{
 		margin-left:20px;
 	}
 }
-section hr{
-	visibility: hidden;
-}
 section h2{
-	visibility: hidden;
 	margin-top:80px;
 }
 section .loginArea i{

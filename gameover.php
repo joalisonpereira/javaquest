@@ -5,11 +5,11 @@
 	if(!isLogado()){
 		header('Location:lobby.php');
 	}
-	$id=$_SESSION['usuario']['id']; //ID DO USUARIO
-	$pontos=$_SESSION['pontos']; //PONTOS DA PARTIDA
-	$recorde=UsuarioDAO::getRecorde($id)->recorde; //RECORDE DE PONTOS DO BANCO
+	$id=$_SESSION['usuario']['id'];
+	$pontos=$_SESSION['pontos']; 
+	$recorde=UsuarioDAO::getRecorde($id)->recorde;
 
-	if($recorde<$pontos){	
+	if($recorde<$pontos){
 		UsuarioDAO::atualizaRecorde($id,$pontos); //ATUALIZANDO RECORDE DO USUARIO
 	}
 ?>
@@ -46,7 +46,7 @@
 				<br><br>
 				<div class="text-center">
 						<a href="lobby.php" class="btn btn-danger btn-lg"> <span class="glyphicon glyphicon-chevron-left" style="margin-right:5px;"></span>Lobby</a>
-						<a href="https://www.github.com/joalisonpereira/javaquest" class="btn btn-danger btn-lg">Java Quest <span class="glyphicon glyphicon-folder-open" style="margin-left:5px;"></span></a>
+						<a href="https://www.github.com/joalisonpereira/javaquest" target="_blank" class="btn btn-danger btn-lg">Java Quest <span class="glyphicon glyphicon-folder-open" style="margin-left:5px;"></span></a>
 					<div class="btn-group">
 					</div>
 				</div>
