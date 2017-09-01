@@ -39,7 +39,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-						<img src="img/java_mascote.png" alt="Java Mascote" class="img-responsive center-block mascote">
+						<img src="../img/java_mascote.png" alt="Java Mascote" class="img-responsive center-block mascote">
 					</div>
 				</div>
 				<div class="pontos text-center">

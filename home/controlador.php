@@ -34,7 +34,7 @@
 	// $_SESSION['vidas']
 	// $_SESSION['nivelConquistado']
 	// $_SESSION['perguntadas']
-	// $_SESSION['octocat']
+	// $_SESSION['octocat'] (adicionado no nivel 1)
 
 
 ?>
