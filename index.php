@@ -1,7 +1,9 @@
-<?php session_start(); 
+<?php session_start();
 	require('scripts/utils.php');
+	require('dao/usuarioDAO.class.php');
+
 	if(isLogado()){
-		header('Location:lobby.php');
+		header('Location:home/lobby.php');
 	}
 ?>
 <!DOCTYPE html>

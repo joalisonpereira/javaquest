@@ -1,7 +1,7 @@
 <?php session_start(); 
 	require('scripts/utils.php');
 	if(isLogado()){
-		header('Location:niveis.php');
+		header('Location:lobby.php');
 	}
 ?>
 <?php 

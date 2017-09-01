@@ -1,5 +1,7 @@
 <?php 
-	require("scripts/init.php");
+	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest";
+	 
+	require($raiz."/scripts/init.php");
 
 	class DATABASE{
 		private static $conexao;

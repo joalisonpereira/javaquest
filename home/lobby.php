@@ -1,9 +1,13 @@
 <?php session_start(); 
-	require('scripts/utils.php');
-	require('dao/usuarioDAO.class.php');
+	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest"; 
+
+	require($raiz.'/scripts/utils.php');
+	require($raiz.'/dao/usuarioDAO.class.php');
+
 	if(!isLogado()){
-		header('Location:index.php');
+		header('Location:../index.php');
 	}
+
 	$_SESSION['vidas']=1;
 	$_SESSION['pontos']=0;
 	$_SESSION['nivelConquistado']=1;
@@ -15,13 +19,13 @@
 		<meta charset="UTF-8">
 		<title>Java Quest - Lobby</title>
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/lobby.css?version=12">
+		<link rel="stylesheet" href="../css/lobby.css?version=12">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<div class="container-fluid">
-				<h1><img src="img/java-logo.jpeg" alt="Java logo"></h1>
+				<h1><img src="../img/java-logo.jpeg" alt="Java logo"></h1>
 				<nav>
 					<div class="menu">
 						<a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNovaPergunta"><span class="glyphicon glyphicon-plus"></span> Perguntas</a>
@@ -42,7 +46,7 @@
 							<div class="row">
 								<?php for ($i=0; $i <= 2; $i++) :?> 
 									<div class="col-md-4 col-xs-4">
-										<img src="img/cat<?= $i; ?>.jpg" alt="Octocat" class="img-responsive">
+										<img src="../img/personagens/cat<?= $i; ?>.jpg" alt="Octocat" class="img-responsive">
 									<div class="text-center">
 										<input type="radio" name="cat" value="cat<?= $i; ?>.jpg" required>
 									</div>
@@ -53,7 +57,7 @@
 							<div class="row">
 								<?php for ($i=3; $i <= 5; $i++) :?> 
 									<div class="col-md-4 col-xs-4">
-										<img src="img/cat<?= $i; ?>.jpg" alt="Octocat" class="img-responsive">
+										<img src="../img/personagens/cat<?= $i; ?>.jpg" alt="Octocat" class="img-responsive">
 									<div class="text-center">
 										<input type="radio" name="cat" value="cat<?= $i; ?>.jpg" required>
 									</div>

@@ -1,9 +1,11 @@
-<?php session_start(); 
-	require('scripts/utils.php');
-	require('dao/usuarioDAO.class.php');
+<?php session_start();
+	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest";
+	 
+	require($raiz.'/scripts/utils.php');
+	require($raiz.'/dao/usuarioDAO.class.php');
 
 	if(!isLogado()){
-		header('Location:lobby.php');
+		header('Location:../index.php');
 	}
 	$id=$_SESSION['usuario']['id'];
 	$pontos=$_SESSION['pontos']; 
