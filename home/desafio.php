@@ -7,10 +7,7 @@
 	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || $_SESSION['nivelConquistado']!=$_GET['nivel'] || !isset($_SESSION['vidas'])){
 		header('Location:lobby.php');
 	}
-	if($_GET['nivel']==1 && !isset($_SESSION['octocat'])){
-		echo $_SESSION['octocat']=$_POST['cat'];
-	}
-
+	
 	?>
 	<!DOCTYPE html>
 	<html lang="pt-br">
