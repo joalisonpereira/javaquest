@@ -1,5 +1,6 @@
 <?php 
-	require('dao/desafioDAO.class.php');
+	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest"; 
+	require($raiz.'/dao/desafioDAO.class.php');
 	if(isset($_POST['pergunta']) && isset($_POST['alternativa1']) && isset($_POST['alternativa2']) && isset($_POST['alternativa3']) && isset($_POST['respostaCorreta'])){
 		if(strlen($_POST['pergunta'])<3){
 			header('Location:lobby.php');

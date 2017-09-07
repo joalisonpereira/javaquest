@@ -7,7 +7,10 @@
 	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || $_SESSION['nivelConquistado']!=$_GET['nivel'] || !isset($_SESSION['vidas'])){
 		header('Location:lobby.php');
 	}
-	
+	if($_GET['nivel']==1 && !isset($_SESSION['octocat'])){
+		$_SESSION['octocat']=$_POST['cat'];
+	}
+
 	?>
 	<!DOCTYPE html>
 	<html lang="pt-br">
@@ -30,6 +33,9 @@
 				</div>
 			</header>
 			<section>
+				<?php 
+					$perguntaSelecionada=selecionaPergunta();
+				?>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4">
@@ -37,7 +43,10 @@
 								<img src="../img/personagens/<?= $_SESSION['octocat']; ?>" alt="" class="img-responsive">
 							</figure>
 							<figure>
-								<img src="../img/vs.png" alt="" style="width:110px; height:90px;" class="center-block">
+								<img src="../img/vs.png" alt="VS" style="width:110px; height:90px;" class="center-block">
+							</figure>
+							<figure>
+								<img src="../img/personagens/<?php echo selecionaOponente($perguntaSelecionada->dificuldade); ?>" alt="Oponente" class="zombie center-block">
 							</figure>
 						</div>
 						<div class="col-md-6 col-md-offset-1">
@@ -45,7 +54,6 @@
 								<form action="controlador.php" method="post">
 									<h2>
 										<?php 
-											$perguntaSelecionada=selecionaPergunta();
 											echo $perguntaSelecionada->pergunta;
 										?>
 									</h2>
@@ -123,10 +131,30 @@
 				}
 			}
 		}
+		if($_GET['nivel']>10 && $_GET['nivel']<=15){
+			$listaPerguntas=DesafioDAO::getPerguntas('Difícil');
+			$idPerguntadas=$_SESSION['perguntadas'] ?? array();
+			foreach ($listaPerguntas as $key => &$row) {
+				if(in_array($row->id, $idPerguntadas)){
+					unset($row);
+				}else{
+					return $row;
+				}
+			}
+		}
 	}
 	function selecionaRespostas($id){
 		$respostas=DesafioDAO::getRespostas($id);
 		shuffle($respostas);
 		return $respostas;
+	}
+	function selecionaOponente(string $dificuldade){
+		if(strcmp($dificuldade,"Fácil")){
+			return "zombie0.png";
+		}else if(strcmp($dificuldade,"Normal")){
+			return "zombie1.png";
+		}else if(strcmp($dificuldade,"Difícil")){
+			return "zombie2.jpg";
+		}
 	}
 ?>

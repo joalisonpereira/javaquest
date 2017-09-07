@@ -29,7 +29,7 @@
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
 						<figure>
-							<img src="img/gameover.gif" alt="Game over" class="img-responsive gameover">
+							<img src="../img/gameover.gif" alt="Game over" class="img-responsive gameover">
 						</figure>
 					</div>
 				</div>
