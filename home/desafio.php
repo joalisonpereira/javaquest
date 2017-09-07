@@ -38,16 +38,28 @@
 				?>
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4">
-							<figure class="personagem">
-								<img src="../img/personagens/<?= $_SESSION['octocat']; ?>" alt="" class="img-responsive">
-							</figure>
-							<figure>
-								<img src="../img/vs.png" alt="VS" style="width:110px; height:90px;" class="center-block">
-							</figure>
-							<figure>
-								<img src="../img/personagens/<?php echo selecionaOponente($perguntaSelecionada->dificuldade); ?>" alt="Oponente" class="zombie center-block">
-							</figure>
+						<div class="col-md-4 hidden-xs">
+							<div class="row">
+								<div class="col-md-12 col-sm-5">
+									<figure class="personagem">
+										<div class="row">
+											<div class="col-md-10 col-md-offset-1">
+												<img src="../img/personagens/<?= $_SESSION['octocat']; ?>" alt="" class="img-responsive octocat">
+											</div>
+										</div>
+									</figure>
+								</div>
+								<div class="col-md-12 col-sm-2">
+									<figure>
+										<img src="../img/vs.png" alt="VS" class="center-block vs">
+									</figure> 
+								</div>
+								<div class="col-md-12 col-sm-5">
+									<figure>
+										<img src="../img/personagens/<?php echo selecionaOponente($perguntaSelecionada->dificuldade); ?>" alt="Oponente" class="ghost center-block img-responsive">
+									</figure>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-6 col-md-offset-1">
 							<div class="quizBox">
@@ -106,6 +118,43 @@
 			position:relative;
 			padding:20px 0 !important;
 		}
+		.ghost{	
+			margin-top:50px;
+		}
+		.octocat{
+			margin-top:53px;
+			margin-bottom:20px;
+		}
+		.vs{
+			width:110px; height:90px;
+		}
+		@media(max-width:990px) and (min-width:480px){
+			.vs{
+				margin-top:140px;
+			}
+		}
+		body {
+			animation: fadein 2s; /* Padrão */
+			-webkit-animation: fadein 2s; /* Webkit */
+			-moz-animation: fadein 2s; /* Firefox */
+			-ms-animation: fadein 2s; /* IE */
+			}
+			@keyframes fadein {
+			from { opacity: 0.3; }
+			to { opacity: 1; } /* Padrão */
+			}
+			@-moz-keyframes fadein {
+			from { opacity: 0.3; }
+			to { opacity: 1; } /* Firefox */
+			}
+			@-webkit-keyframes fadein {
+			from { opacity: 0.3; }
+			to { opacity: 1; } /* Webkit */
+			}
+			@-ms-keyframes fadein {
+			from { opacity: 0.3; }
+			to { opacity: 1; } /* IE */
+		}​
 	</style>
 	<?php 
 	function selecionaPergunta(){
@@ -149,12 +198,12 @@
 		return $respostas;
 	}
 	function selecionaOponente(string $dificuldade){
-		if(strcmp($dificuldade,"Fácil")){
-			return "zombie0.png";
-		}else if(strcmp($dificuldade,"Normal")){
-			return "zombie1.png";
-		}else if(strcmp($dificuldade,"Difícil")){
-			return "zombie2.jpg";
+		if($dificuldade=="Fácil"){
+			return "ghost0.png";
+		}else if($dificuldade=="Normal"){
+			return "ghost1.jpg";
+		}else if($dificuldade=="Difícil"){
+			return "ghost2.png";
 		}
 	}
 ?>
