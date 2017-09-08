@@ -12,7 +12,9 @@
 	$_SESSION['pontos']=0;
 	$_SESSION['nivelConquistado']=1;
 	$_SESSION['perguntadas']=array();
-	unset($_SESSION['octocat']);
+	if(isset($_SESSION['octocat'])){
+		unset($_SESSION['octocat']);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
