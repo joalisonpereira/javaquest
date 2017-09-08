@@ -4,7 +4,7 @@
 	require($raiz.'/scripts/utils.php');
 	require($raiz.'/dao/desafioDAO.class.php');
 
-	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || $_SESSION['nivelConquistado']!=$_GET['nivel'] || !isset($_SESSION['vidas'])){
+	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || !isset($_SESSION['vidas']) || $_SESSION['nivelConquistado']!=$_GET['nivel']){
 		header('Location:lobby.php');
 	}
 	if($_GET['nivel']==1 && !isset($_SESSION['octocat'])){
@@ -18,7 +18,6 @@
 			<meta charset="UTF-8">
 			<title>Java Quest - Nível <?= $_GET['nivel']; ?></title>
 			<meta name="viewport" content="width=device-width">
-			<link rel="stylesheet" href="../css/index.css?version=12">
 			<link rel="stylesheet" href="../css/desafio.css?version=12">
 			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		</head>
@@ -27,7 +26,7 @@
 				<div class="container-fluid">
 					<h1>Batalha <?= $_GET['nivel']; ?></h1>
 					<nav>
-						<a href="lobby.php" class="btn btn-danger btn-cadastro"><span class="glyphicon glyphicon-remove"></span> Desistir</a>
+						<a href="lobby.php" class="btn btn-danger btn-desistir"><span class="glyphicon glyphicon-remove" style="transform:translateY(1px);"></span> Desistir</a>
 					</nav>
 					<hr>
 				</div>
@@ -92,9 +91,9 @@
 									<div class="pull-left">
 										<button class="btn btn-danger">Responder</button>
 									</div>
-									<div class="vidas pull-right">
+									<div class="vidas pull-right" title="Vidas">
 										<p><?= $_SESSION['vidas']; ?></p>
-										<img src="../img/coracao.png" alt="" style="width:40px; height:40px;">
+										<img src="../img/coracao.png" alt="Vidas" style="width:40px; height:40px;">
 									</div>
 								</form>
 							</div>
@@ -126,6 +125,7 @@
 			margin-bottom:20px;
 		}
 		.vs{
+			transition:all 1s;
 			width:110px; height:90px;
 		}
 		@media(max-width:990px) and (min-width:480px){

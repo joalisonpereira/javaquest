@@ -4,7 +4,11 @@
 
 		header("Location:lobby.php");
 
-	}else if($_POST['resposta']=="1"){
+	}else if($_POST['resposta']=="1" && $_POST['nivel']=='15'){
+		$_SESSION['pontos']+=10;
+		header('Location:gameover.php');
+	}
+	else if($_POST['resposta']=="1"){
 
 		$nivel=$_POST['nivel'];
 

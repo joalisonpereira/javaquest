@@ -24,3 +24,11 @@
 	left:28px;
 	top:1px;
 }
+header .btn-desistir{
+	position:absolute;
+	right:10px;
+	top:24px;
+}
+.btn{
+	border-radius: 0 !important;	
+}

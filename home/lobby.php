@@ -107,12 +107,11 @@
 								</tbody>
 							</table>
 							<br>
-							<hr>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>	
 		<footer>
 			
 		</footer>
