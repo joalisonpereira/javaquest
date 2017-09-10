@@ -7,23 +7,22 @@
 	}else if($_POST['resposta']=="1" && $_POST['nivel']=='15'){
 		$_SESSION['pontos']+=10;
 		header('Location:gameover.php');
-	}
-	else if($_POST['resposta']=="1"){
+	}else if($_POST['resposta']=="1"){
 
 		$nivel=$_POST['nivel'];
 
 		$nivel+=1;
 
-		$_SESSION['pontos']+=10; //AUMENTA PONTOS
+		$_SESSION['pontos']+=10;
 
-		$_SESSION['nivelConquistado']=$nivel; // PASSOU DE NIVEL
+		$_SESSION['nivelConquistado']=$nivel; 
 
-		$_SESSION['perguntadas'][]=$_POST['pergunta_id']; // ADICIONA ID DA PERGUNTA NO ARRAY
+		$_SESSION['perguntadas'][]=$_POST['pergunta_id']; 
 
 		header("Location:desafio.php?nivel={$nivel}");
 	}else if($_POST['resposta']=="0" && $_SESSION['vidas']==1){
 
-		$_SESSION['vidas']=0; //PERDEU UMA VIDA
+		$_SESSION['vidas']=0; 
 
 		$nivel=$_POST['nivel'];
 
@@ -34,11 +33,11 @@
 		header ("Location:gameover.php");
 	}
 	// DADOS GUARDADOS NA SESSÃO:
+	
 	// $_SESSION['usuario']
 	// $_SESSION['vidas']
 	// $_SESSION['nivelConquistado']
 	// $_SESSION['perguntadas']
 	// $_SESSION['octocat'] (adicionado no nivel 1)
-
 
 ?>

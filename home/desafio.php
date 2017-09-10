@@ -37,13 +37,13 @@
 				?>
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 hidden-xs">
+						<div class="col-md-4 hidden-xs hidden-sm">
 							<div class="row">
 								<div class="col-md-12 col-sm-5">
 									<figure class="personagem">
 										<div class="row">
 											<div class="col-md-10 col-md-offset-1">
-												<img src="../img/personagens/<?= $_SESSION['octocat']; ?>" alt="" class="img-responsive octocat">
+												<img src="../img/personagens/<?= $_SESSION['octocat']; ?>" alt="Octocat" class="img-responsive octocat">
 											</div>
 										</div>
 									</figure>
@@ -106,56 +106,6 @@
 			</footer>
 		</body>
 	</html>
-	<style>
-		.table strong{
-			border-radius:10px;
-			background: #E03D3D ;
-			padding:8px 12px;
-			color:white;
-		}
-		.table td{
-			position:relative;
-			padding:20px 0 !important;
-		}
-		.ghost{	
-			margin-top:50px;
-		}
-		.octocat{
-			margin-top:53px;
-			margin-bottom:20px;
-		}
-		.vs{
-			transition:all 1s;
-			width:110px; height:90px;
-		}
-		@media(max-width:990px) and (min-width:480px){
-			.vs{
-				margin-top:140px;
-			}
-		}
-		body {
-			animation: fadein 2s; /* Padrão */
-			-webkit-animation: fadein 2s; /* Webkit */
-			-moz-animation: fadein 2s; /* Firefox */
-			-ms-animation: fadein 2s; /* IE */
-			}
-			@keyframes fadein {
-			from { opacity: 0.3; }
-			to { opacity: 1; } /* Padrão */
-			}
-			@-moz-keyframes fadein {
-			from { opacity: 0.3; }
-			to { opacity: 1; } /* Firefox */
-			}
-			@-webkit-keyframes fadein {
-			from { opacity: 0.3; }
-			to { opacity: 1; } /* Webkit */
-			}
-			@-ms-keyframes fadein {
-			from { opacity: 0.3; }
-			to { opacity: 1; } /* IE */
-		}​
-	</style>
 	<?php 
 	function selecionaPergunta(){
 		if($_GET['nivel']<=5){
@@ -199,9 +149,9 @@
 	}
 	function selecionaOponente(string $dificuldade){
 		if($dificuldade=="Fácil"){
-			return "ghost0.png";
+			return "ghost0.jpg";
 		}else if($dificuldade=="Normal"){
-			return "ghost1.jpg";
+			return "ghost1.png";
 		}else if($dificuldade=="Difícil"){
 			return "ghost2.png";
 		}

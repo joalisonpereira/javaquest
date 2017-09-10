@@ -32,3 +32,51 @@ header .btn-desistir{
 .btn{
 	border-radius: 0 !important;	
 }
+.table strong{
+	border-radius:10px;
+	background: #E03D3D ;
+	padding:8px 12px;
+	color:white;
+}
+.table td{
+	position:relative;
+	padding:20px 0 !important;
+}
+.ghost{	
+	margin-top:50px;
+}
+.octocat{
+	margin-top:53px;
+	margin-bottom:20px;
+}
+.vs{
+	transition:all 1s;
+	width:110px; height:90px;
+}
+@media(max-width:990px) and (min-width:480px){
+	.vs{
+		margin-top:140px;
+	}
+}
+body {
+	animation: fadein 2s; /* Padrão */
+	-webkit-animation: fadein 2s; /* Webkit */
+	-moz-animation: fadein 2s; /* Firefox */
+	-ms-animation: fadein 2s; /* IE */
+}
+@keyframes fadein {
+	from { opacity: 0.3; }
+	to { opacity: 1; } /* Padrão */
+}
+@-moz-keyframes fadein {
+	from { opacity: 0.3; }
+	to { opacity: 1; } /* Firefox */
+}
+@-webkit-keyframes fadein {
+	from { opacity: 0.3; }
+	to { opacity: 1; } /* Webkit */
+}
+@-ms-keyframes fadein {
+	from { opacity: 0.3; }
+	to { opacity: 1; } /* IE */
+	}​
