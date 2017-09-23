@@ -48,3 +48,6 @@ figure img{
 	transition:all 0.5s;
 	transform:translateY(-20px);
 }
+#linhaPontos{
+	font-size:150%;
+}

@@ -7,7 +7,6 @@
 	if(!isLogado()){
 		header('Location:../index.php');
 	}
-
 	$_SESSION['vidas']=1;
 	$_SESSION['pontos']=0;
 	$_SESSION['nivelConquistado']=1;
@@ -32,7 +31,7 @@
 				<nav>
 					<div class="menu">
 						<a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNovaPergunta"><span class="glyphicon glyphicon-plus"></span> Perguntas</a>
-						<a href="#" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-tower"></span> Recorde</a>
+						<a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalRecorde"><span class="glyphicon glyphicon-tower"></span> Recorde</a>
 						<a href="logout.php" class="btn btn-danger"><span class="glyphicon glyphicon-home"></span> Sair</a>
 					</div>
 				</nav>
@@ -88,10 +87,12 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php 
+									<?php
+										$recorde=0; //RECORDE DO USUARIO LOGADO
 										$lista=UsuarioDAO::getRanking();
 										foreach ($lista as $key => $user){
 											if($_SESSION['usuario']['login']==$user->login){
+												$recorde=$user->recorde;
 												echo "<tr class='bg-warning'>";
 													echo "<td>".++$key."º</td>";
 													echo '<td>'.$user->login.'</td>';
@@ -169,6 +170,31 @@
 				<div class="text-center">
 					<small>Adicione apenas perguntas sobre o <strong>Java</strong></small>
 				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modalRecorde">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="transform:translateY(2px);">
+		          <span aria-hidden="true" style="font-size:130%;">&times;</span>
+		        </button>
+				<h3 class="modal-title">
+					Meu Recorde
+				</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+						<div class="text-center">
+							<img src="../img/coroa.png" alt="Coroa" class="img-responsive">
+							<hr>
+							<p id="linhaPontos">Pontuação: <?= $recorde; ?></p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

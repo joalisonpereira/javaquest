@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<div class="container-fluid">
-				<h1>Java Quest</h1>
+				<h1><img src="img/java-logo.jpeg" alt="Java logo"></h1>
 				<nav>
 					<a href="index.php" class="btn btn-danger btn-voltar">Página Inicial</a>
 				</nav>
