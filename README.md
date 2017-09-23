@@ -5,7 +5,7 @@ Jogo de perguntas sobre a linguagem java.
 Requerimentos
 -------------
 
-Servidor web, MySQL e PHP.
+Apache, MySQL e PHP.
 
 Informações 
 -----------
