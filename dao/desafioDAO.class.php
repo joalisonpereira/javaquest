@@ -1,5 +1,5 @@
 <?php
-	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest"; 
+	$raiz=__DIR__."/../";
 	require($raiz.'/dao/database.class.php');
 
 	class DesafioDAO extends DATABASE{

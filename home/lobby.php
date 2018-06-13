@@ -1,6 +1,5 @@
 <?php session_start(); 
-	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest"; 
-
+	$raiz=__DIR__."/../";
 	require($raiz.'/scripts/utils.php');
 	require($raiz.'/dao/usuarioDAO.class.php');
 

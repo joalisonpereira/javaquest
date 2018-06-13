@@ -1,5 +1,5 @@
 <?php session_start();
-	$raiz=$_SERVER['DOCUMENT_ROOT']."/javaquest"; 
+	$raiz=__DIR__."/../";
 	require ($raiz.'/dao/usuarioDAO.class.php');
 
 	if(isset($_POST['login']) && isset($_POST['senha'])){
