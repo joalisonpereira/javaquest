@@ -21,7 +21,7 @@
 		}else{
 			$user=new Usuario($login,$senha);
 			UsuarioDAO::insert($user);
-			header('Location:index.php');
+			$_SESSION['msgCadastro']="Cadastrado com sucesso.";
 		}
 	}
 ?>
