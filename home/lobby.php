@@ -1,7 +1,7 @@
 <?php session_start(); 
 	$raiz=__DIR__."/../";
-	require($raiz.'/scripts/utils.php');
-	require($raiz.'/dao/usuarioDAO.class.php');
+	require($raiz.'scripts/utils.php');
+	require($raiz.'dao/usuarioDAO.class.php');
 
 	if(!isLogado()){
 		header('Location:../index.php');

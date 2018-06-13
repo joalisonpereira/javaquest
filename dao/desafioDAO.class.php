@@ -1,6 +1,6 @@
 <?php
 	$raiz=__DIR__."/../";
-	require($raiz.'/dao/database.class.php');
+	require($raiz.'dao/database.class.php');
 
 	class DesafioDAO extends DATABASE{
 

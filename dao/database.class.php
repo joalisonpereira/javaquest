@@ -1,6 +1,6 @@
 <?php 
 	$raiz=__DIR__."/../";
-	require($raiz."/scripts/init.php");
+	require($raiz."scripts/init.php");
 	class DATABASE{
 		private static $conexao;
 

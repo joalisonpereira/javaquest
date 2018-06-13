@@ -1,7 +1,7 @@
 <?php session_start(); 
 	$raiz=__DIR__."/../";
-	require($raiz.'/scripts/utils.php');
-	require($raiz.'/dao/desafioDAO.class.php');
+	require($raiz.'scripts/utils.php');
+	require($raiz.'dao/desafioDAO.class.php');
 
 	if(!isLogado() || !isset($_GET['nivel']) || !is_numeric($_GET['nivel']) || !isset($_SESSION['vidas']) || $_SESSION['nivelConquistado']!=$_GET['nivel']){
 		header('Location:lobby.php');

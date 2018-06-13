@@ -1,5 +1,7 @@
 <?php session_start();
-	$raiz=__DIR__."/../";
+ini_set('display_errors', true);
+	error_reporting(E_ALL);
+	$raiz=__DIR__;
 	require ($raiz.'/dao/usuarioDAO.class.php');
 
 	if(isset($_POST['login']) && isset($_POST['senha'])){

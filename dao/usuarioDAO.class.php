@@ -1,7 +1,7 @@
 <?php
 	$raiz=__DIR__."/../";
-	require_once($raiz.'/dao/database.class.php');
-	require_once($raiz.'/class/usuario.class.php');
+	require_once($raiz.'dao/database.class.php');
+	require_once($raiz.'class/usuario.class.php');
 
 	class UsuarioDAO extends DATABASE{
 
