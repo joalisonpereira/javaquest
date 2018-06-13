@@ -13,15 +13,18 @@
 		$confirmaSenha=$_POST['confirmaSenha'];
 
 		if($senha != $confirmaSenha){
-			$_SESSION['msgCadastro']="Senhas não conferem.";
-			header('Location:cadastro.php');
+			$_SESSION['msgCadastro']="Senhas não conferem";
 		}else if(UsuarioDAO::loginExiste($login)!=false){
 			$_SESSION['msgCadastro']="Login já existente";
-			header('Location:cadastro.php');
 		}else{
 			$user=new Usuario($login,$senha);
-			UsuarioDAO::insert($user);
-			$_SESSION['msgCadastro']="Cadastrado com sucesso.";
+			$operacao=UsuarioDAO::insert($user);
+			if($operacao){
+				$_SESSION['msgCadastro']="Cadastrado com sucesso";
+			}else{
+				$_SESSION['msgCadastro']="Falha no cadastro";
+			}
 		}
+		header('Location:cadastro.php');
 	}
 ?>
