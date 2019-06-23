@@ -1,12 +1,4 @@
 # Java Quest
 
-Jogo de perguntas e respostas sobre a linguagem java.
-
-Requerimentos
--------------
-
-Apache, MySQL e PHP.
-
-Informações 
------------
+Game of questions and answers on the language java.
 
